@@ -4,3 +4,5 @@
 
 .player>div:last-child{flex:0 0 auto!important;min-width:80px;white-space:nowrap}.player .score{white-space:nowrap}
 @media(max-width:760px){.player>div:last-child{min-width:55px}.player .score{font-size:8px}}
+
+#atlas.standard-board{grid-template-columns:1fr!important;max-width:none}.player [data-clock-detail]{font-size:8px;max-width:150px;white-space:normal;line-height:1.3}@media(max-width:760px){.player [data-clock-detail]{max-width:78px;font-size:7px}}
