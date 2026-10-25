@@ -7,4 +7,4 @@ test('overtime carries excess elapsed time out of main allowance',()=>{const c={
 test('overtime consumes periods and flags after the last one',()=>{const c={...DEFAULTS,clock:'overtime'},t={main:0,period:30,left:2};assert.equal(consumeClock(t,c,31),false);assert.equal(t.left,1);assert.equal(t.period,29);assert.equal(consumeClock(t,c,29),true);});
 test('successful overtime turn resets remaining period time',()=>{const c={...DEFAULTS,clock:'overtime'},t={main:0,period:4,left:3};finishClock(t,c);assert.equal(t.period,30);assert.equal(t.left,3);});
 test('untimed games do not consume clock state',()=>{const c={...DEFAULTS,clock:'none'},t={main:60,period:30,left:5};assert.equal(consumeClock(t,c,500),false);assert.equal(t.main,60);});
-test('team clocks are independent and correctly formatted',()=>{const c={...DEFAULTS},clocks=createClocks(c,4);clocks[1].main=9;assert.equal(clocks[2].main,900);assert.equal(formatClock(clocks[1]),'0:09');});
+test('player clocks are independent and correctly formatted',()=>{const c={...DEFAULTS},clocks=createClocks(c,4);clocks[1].main=9;assert.equal(clocks[2].main,900);assert.equal(formatClock(clocks[1]),'0:09');});
